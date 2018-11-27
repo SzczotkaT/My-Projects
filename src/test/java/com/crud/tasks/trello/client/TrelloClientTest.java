@@ -63,7 +63,7 @@ public class TrelloClientTest {
     public void shouldCreateCard() throws URISyntaxException{
         //Given
         TrelloCardDto trelloCardDto = new TrelloCardDto(
-                "test task",
+                "Test task",
                 "Test Description",
                 "top",
                 "test_id"
