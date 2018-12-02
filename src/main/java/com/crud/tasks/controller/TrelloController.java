@@ -11,17 +11,22 @@ import java.util.List;
 
 @CrossOrigin("*")
 @RestController
-    @RequestMapping("/v1/trello")
-    public class TrelloController {
+@RequestMapping("/v1/trello")
+public class TrelloController {
 
-        @Autowired
-        private TrelloClient trelloClient;
+    @Autowired
+    private TrelloClient trelloService;
 
-        @RequestMapping(method = RequestMethod.GET, value = "getTrelloBoards")
-        public List<TrelloBoardDto> getTrelloBoards() {
-            return trelloClient.getTrelloBoards();
-//
-//            // GET request
+    @RequestMapping(method = RequestMethod.GET, value = "/getTrelloBoards")
+    public List<TrelloBoardDto> getTrelloBoards() {
+        return trelloService.getTrelloBoards();
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/createTrelloCard")
+    public CreatedTrelloCard createTrelloCard(@RequestBody TrelloCardDto trelloCardDto) {
+        return trelloService.createNewCard(trelloCardDto);
+    }
+        //  GET request
 //            List<TrelloBoardDto> trelloBoards = trelloClient.getTrelloBoards();
 //
 //            trelloBoards.forEach(trelloBoardDto -> {
@@ -34,11 +39,4 @@ import java.util.List;
 //                        System.out.println(trelloList.getName() + " - " + trelloList.getId() + " - " + trelloList.isClosed()));
 //
 //            });
-        }
-
-        @RequestMapping(method = RequestMethod.POST, value = "createTrelloCard")
-        public CreatedTrelloCard createTrelloCard(@RequestBody TrelloCardDto trelloCardDto) {
-
-            return trelloClient.createNewCard(trelloCardDto);
-        }
 }
