@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>My welcome page</title>
+</head>
+<body>
+    <h1>First impression of my page</h1>
+<!--/*@thymesVar id="variable" type="com.crud.tasks.controller.StaticWebPageController"*/-->
+<span th:text="${variable}"></span>
+
+    <br>
+    <!--/*@thymesVar id="one" type="com.crud.tasks.controller.StaticWebPageController"*/-->
+    <!--/*@thymesVar id="two" type="com.crud.tasks.controller.StaticWebPageController"*/-->
+    <span th:text="${one} + ${two}"></span>
+    </br>
+
+    <br>
+    <!--/*@thymesVar id="two" type="com.crud.tasks.controller.StaticWebPageController"*/-->
+    <!--/*@thymesVar id="mul" type="com.crud.tasks.controller.StaticWebPageController"*/-->
+    <span th:text="${mul} + ${two} * ${two}"></span>
+    </br>
+
+    <br>
+    <!--/*@thymesVar id="two" type="com.crud.tasks.controller.StaticWebPageController"*/-->
+    <!--/*@thymesVar id="mulPlus" type="com.crud.tasks.controller.StaticWebPageController"*/-->
+    <span th:text="${mulPlus} + (${two} * ${two} + ${two})"></span>
+    </br>
+
+    <br>
+    <!--/*@thymesVar id="two" type="com.crud.tasks.controller.StaticWebPageController"*/-->
+    <!--/*@thymesVar id="minusMul" type="com.crud.tasks.controller.StaticWebPageController"*/-->
+    <span th:text="${minusMul} + (${two} - ${two} * ${two})"></span>
+    </br>
+
+</body>
+</html>
