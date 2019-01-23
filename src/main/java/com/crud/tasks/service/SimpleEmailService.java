@@ -38,6 +38,7 @@ public class SimpleEmailService {
             messageHelper.setTo(mail.getMailTo());
             messageHelper.setSubject(mail.getSubject());
             messageHelper.setText(mailCreatorService.buildTrelloCardEmail(mail.getMessage()),true);
+            messageHelper.setText(mailCreatorService.howManyTasksInDatabaseEmail(mail.getMessage()), true);
 
             if(mail.getToCc() != null && mail.getToCc().length() > 0){
             messageHelper.setCc(mail.getToCc());
