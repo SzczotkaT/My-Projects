@@ -14,7 +14,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 //local
-apply plugin: 'war'
+//apply plugin: 'war'
 
 group = 'com.crud'
 version = '0.0.1-SNAPSHOT'
@@ -34,11 +34,11 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-mail:2.1.1.RELEASE')
 
 	//local
-	compile('mysql:mysql-connector-java')
-	providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+//	compile('mysql:mysql-connector-java')
+//	providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 
 	//heroku
-//	compile('org.postgresql:postgresql')
+	compile('org.postgresql:postgresql')
 
 	//Swagger
 	compile('io.springfox:springfox-swagger2:2.7.0')
