@@ -16,6 +16,6 @@ public class StaticWebPageController {
         model.put("mul", "2 * 2 = ");
         model.put("mulPlus", "2 * 2 + 2 = ");
         model.put("minusMul", "2 - 2 * 2 = ");
-        return "index";
+        return "indexTh";
     }
 }
